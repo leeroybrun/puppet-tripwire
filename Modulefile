@@ -1,5 +1,5 @@
 name 'leeroybrun-tripwire'
-version '1.0.0'
+version '1.0.1'
 source 'git://github.com/leeroybrun/puppet-tripwire'
 author 'Leeroy Brun'
 license 'MIT'
