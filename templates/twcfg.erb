@@ -1,23 +1,19 @@
 # MANAGED BY PUPPET!
 
-# required
-DBFILE                 =/var/lib/tripwire/tripwire.twd
-LOCALKEYFILE           =/etc/tripwire/local.key
-POLFILE                =/etc/tripwire/tw.pol
-REPORTFILE             =/var/lib/tripwire/report/$(DATE).twr
-SITEKEYFILE            =/etc/tripwire/site.key
-
-# e-mail notifications
-EMAILREPORTLEVEL       =3
+ROOT          =/usr/sbin
+POLFILE       =/etc/tripwire/tw.pol
+DBFILE        =/var/lib/tripwire/$(HOSTNAME).twd
+REPORTFILE    =/var/lib/tripwire/report/$(HOSTNAME)-$(DATE).twr
+SITEKEYFILE   =/etc/tripwire/site.key
+LOCALKEYFILE  =/etc/tripwire/$(HOSTNAME)-local.key
+EDITOR        =/usr/bin/editor
+LATEPROMPTING =false
+LOOSEDIRECTORYCHECKING =false
+EMAILREPORTLEVEL =3
+REPORTLEVEL   =3
+SYSLOGREPORTING =true
 GLOBALEMAIL            =<%= globalemail %>
 MAILMETHOD             =SENDMAIL
 MAILNOVIOLATIONS       =false
 MAILPROGRAM            =/usr/sbin/sendmail -oi -t
-
-# other
-EDITOR                 =/bin/vi
-LATEPROMPTING          =false
-LOOSEDIRECTORYCHECKING =false
-REPORTLEVEL            =4
-SYSLOGREPORTING        =true
-TEMPDIRECTORY          =/var/tmp
+TEMPDIRECTORY =/tmp
