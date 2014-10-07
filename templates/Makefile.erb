@@ -16,7 +16,7 @@ tw.cfg: site.key twcfg.txt
 
 tw.pol: tw.cfg twpol.txt
 	if [ -f tw.pol -a -f /var/lib/tripwire/tripwire.twd ]; \
-	then /usr/sbin/tripwire --update-policy --local-passphrase '<%= @localpassphrase %>' --quiet --secure-mode low --site-passphrase '<%= sitepassphrase %>' twpol.txt; \
+	then /usr/sbin/tripwire --update-policy --local-passphrase '<%= @localpassphrase %>' --quiet --secure-mode low --site-passphrase '<%= @sitepassphrase %>' twpol.txt; \
 	else /usr/sbin/twadmin --create-polfile --site-passphrase '<%= @sitepassphrase %>' twpol.txt; \
 	fi
 
