@@ -2,11 +2,11 @@ class tripwire (
   $ensure = 'latest'
 ){
   $required = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => 'tripwire',
+    /(?i-mx:centos|fedora|redhat|scientific|ubuntu)/ => 'tripwire',
   }
 
   $paths = $::operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => [
+    /(?i-mx:centos|fedora|redhat|scientific|ubuntu)/ => [
       '/etc/tripwire',
       '/var/lib/tripwire'
     ],
